@@ -17,8 +17,8 @@ export default function Index() {
   return (
     <>
       <Head>
-        <title>{t('title')}</title>
-        <meta content={t('description')} name="description" />
+        <title>Anna Kopylova | Front-end developer</title>
+        <meta content="Passionate front-end developer with a keen eye for design and a commitment to creating seamless, user-friendly experiences." name="description" />
         <meta
           content="portfolio, personal website, web developer"
           name="keywords"
