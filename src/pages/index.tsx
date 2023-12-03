@@ -1,28 +1,24 @@
 import Head from 'next/head';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GetStaticProps } from 'next';
 
-export const getStaticProps: GetStaticProps = async () => {
-  const response = await import(`../locales/en.json`);
+export const getServerSideProps: GetStaticProps = async ({
+  locale,
+}) => ({
+  props: {
+    ...(await serverSideTranslations(locale ?? 'en', ['common'])),
+  },
+});
 
-  return {
-    props: {
-      content: response.default,
-    },
-  };
-};
-
-export default function Index({
-  content,
-}: {
-  content: typeof import('../locales/en.json');
-}) {
-  const { title, description } = content;
+export default function Index() {
+  const { t } = useTranslation();
 
   return (
     <>
       <Head>
-        <title>{title}</title>
-        <meta content={description} name="description" />
+        <title>{t('title')}</title>
+        <meta content={t('description')} name="description" />
         <meta
           content="portfolio, personal website, web developer"
           name="keywords"
