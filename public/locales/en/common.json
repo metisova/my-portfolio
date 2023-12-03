@@ -1,4 +1,7 @@
 {
   "title": "Anna Kopylova | Front-end developer",
-  "description": "Passionate front-end developer with a keen eye for design and a commitment to creating seamless, user-friendly experiences."
+  "description": "Passionate front-end developer with a keen eye for design and a commitment to creating seamless, user-friendly experiences.",
+  "greeting": "Hello, I am Anna Kopylova",
+  "occupation": "Front-end developer",
+  "introduction": "Read more <AboutLink>about me</AboutLink> or <ContactLink>contact me</ContactLink>"
 }

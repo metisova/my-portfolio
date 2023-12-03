@@ -1,24 +1,23 @@
 import Head from 'next/head';
-import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GetStaticProps } from 'next';
+import Home from '@/components/Home';
 
-export const getServerSideProps: GetStaticProps = async ({
-  locale,
-}) => ({
+export const getServerSideProps: GetStaticProps = async ({ locale }) => ({
   props: {
     ...(await serverSideTranslations(locale ?? 'en', ['common'])),
   },
 });
 
 export default function Index() {
-  const { t } = useTranslation();
-
   return (
     <>
       <Head>
         <title>Anna Kopylova | Front-end developer</title>
-        <meta content="Passionate front-end developer with a keen eye for design and a commitment to creating seamless, user-friendly experiences." name="description" />
+        <meta
+          content="Passionate front-end developer with a keen eye for design and a commitment to creating seamless, user-friendly experiences."
+          name="description"
+        />
         <meta
           content="portfolio, personal website, web developer"
           name="keywords"
@@ -45,7 +44,7 @@ export default function Index() {
         />
         <link rel="manifest" href="/site.webmanifest"></link>
       </Head>
-      <p>Hello!</p>
+      <Home />
     </>
   );
 }
